@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: tika-demo
+
+  servlet:
+    multipart:
+      # 单个文件最大大小
+      max-file-size: 50MB
+      # 整个请求最大大小
+      max-request-size: 50MB
+
+server:
+  port: 8080

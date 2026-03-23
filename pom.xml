@@ -12,6 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <tika.version>3.2.3</tika.version>
     </properties>
     <dependencies>
         <!-- OkHttp：HTTP 客户端 -->
@@ -32,6 +33,31 @@
             <version>1.18.36</version>
             <scope>provided</scope>
         </dependency>
-    </dependencies>
+        <!-- Spring Boot Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <version>3.2.3</version>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
+        <!-- Apache Tika 核心 -->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>${tika.version}</version>
+        </dependency>
+
+        <!-- Apache Tika 解析器（包含各种格式支持） -->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parsers-standard-package</artifactId>
+            <version>${tika.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>

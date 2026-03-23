@@ -1,4 +1,4 @@
-package com.cz;
+package com.cz.damoxing;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
