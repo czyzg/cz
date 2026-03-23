@@ -54,7 +54,7 @@ public class QueryTermMappingAdminServiceImpl implements QueryTermMappingAdminSe
         record.setTargetTerm(targetTerm);
         record.setMatchType(requestParam.getMatchType() != null ? requestParam.getMatchType() : 1);
         record.setPriority(requestParam.getPriority() != null ? requestParam.getPriority() : 0);
-        record.setEnabled(requestParam.getEnabled() != null ? requestParam.getEnabled() : true);
+        record.setEnabled(requestParam.getEnabled() != null ? (requestParam.getEnabled() ? 1 : 0) : 1);
         record.setRemark(StrUtil.trimToNull(requestParam.getRemark()));
 
         queryTermMappingMapper.insert(record);
@@ -84,7 +84,7 @@ public class QueryTermMappingAdminServiceImpl implements QueryTermMappingAdminSe
             record.setPriority(requestParam.getPriority());
         }
         if (requestParam.getEnabled() != null) {
-            record.setEnabled(requestParam.getEnabled());
+            record.setEnabled(requestParam.getEnabled() ? 1 : 0);
         }
         if (requestParam.getRemark() != null) {
             record.setRemark(StrUtil.trimToNull(requestParam.getRemark()));
@@ -137,7 +137,7 @@ public class QueryTermMappingAdminServiceImpl implements QueryTermMappingAdminSe
                 .targetTerm(record.getTargetTerm())
                 .matchType(record.getMatchType())
                 .priority(record.getPriority())
-                .enabled(record.getEnabled())
+                .enabled(record.getEnabled() != null && record.getEnabled() == 1)
                 .remark(record.getRemark())
                 .createTime(record.getCreateTime())
                 .updateTime(record.getUpdateTime())

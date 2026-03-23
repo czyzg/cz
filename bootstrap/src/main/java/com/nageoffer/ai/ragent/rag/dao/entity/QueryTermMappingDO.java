@@ -59,7 +59,7 @@ public class QueryTermMappingDO {
     /**
      * 是否生效 1：生效 0：禁用
      */
-    private Boolean enabled;
+    private Integer enabled;
 
     /**
      * 备注

@@ -64,7 +64,7 @@ public class QueryTermMappingService {
         }
         String result = text;
         for (QueryTermMappingDO mapping : cachedMappings) {
-            if (Boolean.FALSE.equals(mapping.getEnabled())) {
+            if (mapping.getEnabled() == null || mapping.getEnabled() == 0) {
                 continue;
             }
             if (mapping.getMatchType() != null && mapping.getMatchType() != 1) {
